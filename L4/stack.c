@@ -2,12 +2,10 @@
 #include<stdlib.h>
 #include<string.h>
 
-typedef struct node
-{
+typedef struct node{
     int value;
     struct node *next;
 }node;
-
 void printStack(node *top){
     node *newNode = top;
     if(top == NULL)printf("none\n");
@@ -19,27 +17,18 @@ void printStack(node *top){
         printf("\n");
     }
 }
-
 void push(node **top, int val){
-    node *newNode;
-    newNode = (node*)malloc(sizeof(node));
-    newNode->value = val;
-    newNode->next = *top;
+    node *newNode = (node*)malloc(sizeof(node));
+    newNode->value = val; newNode->next = *top;
     *top = newNode;
 }
-
 void pop(node **top){
     node *ptr;
-    if(*top == NULL){
-        return;
-    }
-
+    if(*top == NULL) return;
     *top = (*top)->next;
 }
-
 int peek(node *top){
     node *newNode = top;
-
     if(newNode == NULL)printf("none\n");
     else printf("%d\n", newNode->value);
 }

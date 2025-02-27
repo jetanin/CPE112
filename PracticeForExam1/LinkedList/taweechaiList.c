@@ -38,21 +38,17 @@ void insert(node **Node, int val){
 
 
 int main(){
-    int n1, n2, num;
-    node *newNode1 = NULL, *newNode2 = NULL;
-    scanf("%d", &n1);
-    for(int i = 0; i < n1; i++){
+    int num;
+    node *head = NULL;
+    for(int i = 0; i < 5; i++){
         scanf("%d", &num);
-        insert(&newNode1, num);
+        insert(&head, num);
     }
-    scanf("%d", &n2);
-    for(int i = 0; i < n2; i++){
+    for(int i = 0; i < 5; i++){
         scanf("%d", &num);
-        insert(&newNode2, num);
+        insert(&head, num);
     }
-
-    traverse(newNode1);
-    traverse(newNode2);
+    traverse(head);
 
     return 0;
 }
