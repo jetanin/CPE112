@@ -68,25 +68,25 @@ class Tree{
     private void preorder(node root){
         if (root != null) {
             System.out.printf("%d ", root.value);
-            inorder(root.left);
-            inorder(root.right);
+            preorder(root.left);
+            preorder(root.right);
         } 
     }
 
     public void preorder() {
-        inorder(this.root);
+        preorder(this.root);
     }
 
     private void postorder(node root){
         if (root != null) {
-            inorder(root.left);
-            inorder(root.right);
+            postorder(root.left);
+            postorder(root.right);
             System.out.printf("%d ", root.value);
         } 
     }
 
     public void postorder() {
-        inorder(this.root);
+        postorder(this.root);
     }
 
 }
