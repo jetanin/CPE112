@@ -65,6 +65,30 @@ class Tree{
         inorder(this.root);
     }
 
+    private void preorder(node root){
+        if (root != null) {
+            System.out.printf("%d ", root.value);
+            inorder(root.left);
+            inorder(root.right);
+        } 
+    }
+
+    public void preorder() {
+        inorder(this.root);
+    }
+
+    private void postorder(node root){
+        if (root != null) {
+            inorder(root.left);
+            inorder(root.right);
+            System.out.printf("%d ", root.value);
+        } 
+    }
+
+    public void postorder() {
+        inorder(this.root);
+    }
+
 }
 
 public class Lab06_BST{
