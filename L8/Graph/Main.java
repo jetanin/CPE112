@@ -29,17 +29,34 @@ public class Main{
         for(int i = 0; i < numInput; i++){
             src = sc.next();
             dest = sc.next();
-            weight = isWeighted ? sc.nextInt() : 1;
-            graph.addEdge(src, dest, weight);
+            if(isWeighted){
+                weight = sc.nextInt();
+                graph.addEdge(src, dest, weight);
+            }else{
+                graph.addEdge(src, dest);
+            }
         }
         
         
+        // System.out.println("\nEdges in the graph:");
+        // for (String node : graph.adjacencyList.keySet()) {
+        //     for (Edge edge : graph.adjacencyList.get(node)) {
+        //         if (isWeighted) {
+        //             System.out.println(node + " -> " + edge.dest + " (Weight: " + edge.weight + ")");
+        //         } else {
+        //             System.out.println(node + " -> " + edge.dest);
+        //         }
+        //     }
+        // }
+
+
         //OUTPUT
         System.out.print("Enter number of output : ");
         int numOutput = sc.nextInt();
         String key;
         if(graphType == 1){
             for(int i = 0; i < numOutput; i++){
+                System.out.print("Key : ");
                 key = sc.next();
                 if(isWeighted) {
                     System.out.print("Number of Degrees : ");
@@ -54,21 +71,22 @@ public class Main{
             }
         }else{
             for(int i = 0; i < numOutput; i++){
+                System.out.print("Key : ");
                 key = sc.next();
                 if(isWeighted) {
                     System.out.print("Number of Degrees : ");
-                    System.out.println(graph.getOutDegree(key)+graph.getInDegree(key));
+                    System.out.println(graph.getOutDegree(key));
                     System.out.print("Weight of Degrees : ");
-                    System.out.println(graph.sumWeightOutDegree(key)+graph.getInDegree(key));
+                    System.out.println(graph.sumWeightOutDegree(key));
                 }
                 else{
                     System.out.print("Number of Degrees : ");
-                    System.out.println(graph.getOutDegree(key)+graph.getInDegree(key));
+                    System.out.println(graph.getOutDegree(key));
                 } 
             }
 
         }
 
-        
+        sc.close();
     }
 }

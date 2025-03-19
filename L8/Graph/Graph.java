@@ -51,6 +51,16 @@ public abstract class Graph{
         }
         return adjacencyList.get(name).size();
     }
+    public int sumWeightOutDegree(String name){
+        if (!adjacencyList.containsKey(name)) {
+            return 0;
+        }
+        int sum = 0;
+        for (Edge edge : adjacencyList.get(name)) {
+            sum += edge.weight;
+        }
+        return sum;
+    }
 
     public int getInDegree(String name){
         int inDegree = 0;
@@ -71,16 +81,6 @@ public abstract class Graph{
                     sum += edge.weight;
                 }
             }
-        }
-        return sum;
-    }
-    public int sumWeightOutDegree(String name){
-        if (!adjacencyList.containsKey(name)) {
-            return 0;
-        }
-        int sum = 0;
-        for (Edge edge : adjacencyList.get(name)) {
-            sum += edge.weight;
         }
         return sum;
     }
