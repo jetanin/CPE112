@@ -1,3 +1,4 @@
+package app;
 import java.util.*;
 
 public abstract class AdjL {

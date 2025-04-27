@@ -1,3 +1,16 @@
-/L7_Video/Video/
+# Ignore compiled class files
 *.class
+
+# Ignore executables
 *.exe
+
+# Ignore build directories
+/bin/
+/out/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore specific folders
+/L7_Video/Video/

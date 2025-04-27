@@ -1,3 +1,4 @@
+package app;
 public abstract class AdjM {
     protected int[][] matrix;
 

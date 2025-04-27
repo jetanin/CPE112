@@ -1,3 +1,4 @@
+package app;
 public class Algorithm {
     public String dfs(GraphM graph, int startNode){
         return "Implement algorithm here";

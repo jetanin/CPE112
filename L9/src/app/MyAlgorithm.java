@@ -1,10 +1,11 @@
+package app;
 import java.util.*;
 
 public class MyAlgorithm extends Algorithm{
     public MyAlgorithm() {
 
     }
-    
+
     @Override
     public String dfs(GraphM graph, int startNode){
         boolean []isVisited = new boolean[graph.numVertices];
